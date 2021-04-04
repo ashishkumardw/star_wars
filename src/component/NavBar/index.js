@@ -1,25 +1,34 @@
 import React from 'react';
 
-import { Logo, Nav, NavMenu, NavLink } from './NavBarElements';
+import {
+  LogoContainer,
+  Logo,
+  Nav,
+  NavMenu,
+  NavLink,
+  Bars,
+} from './NavBarElements';
 
-const Header = () => {
+const Header = ({ toggle }) => {
   return (
-    <Nav>
-      {/*<Bars />*/}
-      <Logo
-        src={require('../../assets/images/Star_Wars_Logo.jpg').default}
-        alt='Star Wars'
-      />
-      <br />
-      <br />
-      <NavMenu>
-        <NavLink to={'/'}>All Characters</NavLink>
-        <NavLink to={'/'}>Characters</NavLink>
-        <NavLink to={'/'}>Species</NavLink>
-        <NavLink to={'/'}>Planets</NavLink>
-        <NavLink to={'/'}>Films</NavLink>
-      </NavMenu>
-    </Nav>
+    <>
+      <LogoContainer>
+        <Logo
+          src={require('../../assets/images/Star_Wars_Logo.jpg').default}
+          alt='Star Wars'
+        />
+      </LogoContainer>
+      <Nav>
+        <Bars onClick={toggle} />
+        <NavMenu>
+          <NavLink to={'/'}>Characters</NavLink>
+          <NavLink to={'/'}>Species</NavLink>
+          <NavLink to={'/'}>Planets</NavLink>
+          <NavLink to={'/'}>Films</NavLink>
+          <NavLink to={'/'}>Series</NavLink>
+        </NavMenu>
+      </Nav>
+    </>
   );
 };
 
